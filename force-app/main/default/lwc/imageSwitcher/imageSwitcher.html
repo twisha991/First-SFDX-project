@@ -1,0 +1,44 @@
+<!-- <template>
+    
+    <lightning-card title="Image Switcher">
+        <div class="slds-p-around_medium">
+            <lightning-combobox
+                name="imageSelector"
+                label="Choose an Image"
+                value={selectedValue}
+                options={options}
+                onchange={handleChange}>
+            </lightning-combobox>
+
+            <template if:true={imageUrl}>
+                <img src={imageUrl} alt={altText} class="slds-m-top_medium" style="max-width: 300px;" />
+            </template>
+        </div>
+    </lightning-card>
+
+</template> -->
+
+
+
+
+
+
+
+
+<template>
+    <lightning-card title="Image Switcher">
+        <div class="slds-p-around_medium">
+            <lightning-combobox
+                name="imageSelector"
+                label="Choose an Image"
+                value={selectedValue}
+                options={options}
+                onchange={handleChange}>
+            </lightning-combobox>
+
+            <template if:true={imageUrl}>
+                <img src={imageUrl} alt={altText} class="slds-m-top_medium" style="max-width: 300px;" />
+            </template>
+        </div>
+    </lightning-card>
+</template>

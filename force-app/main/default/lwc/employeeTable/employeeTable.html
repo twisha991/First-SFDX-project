@@ -1,0 +1,26 @@
+<template>
+    <lightning-card title="Employee Table" icon-name="standard:table">
+        <div class="slds-m-around_medium">
+            <template if:true={employees}>
+                <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Role</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <template for:each={employees} for:item="emp">
+                            <tr key={emp.id}>
+                                <td>{emp.id}</td>
+                                <td>{emp.name}</td>
+                                <td>{emp.role}</td>
+                            </tr>
+                        </template>
+                    </tbody>
+                </table>
+            </template>
+        </div>
+    </lightning-card>
+</template>

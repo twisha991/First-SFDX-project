@@ -1,0 +1,8 @@
+<apex:page controller="FilteredBookController">
+  <apex:pageBlock title="Filtered Books">
+      <apex:pageBlockTable value="{!Books}" var="B">
+           <apex:column value="{!B.Name}" />
+           <apex:column value="{!B.Genre__c}" />
+       </apex:pageBlockTable>
+  </apex:pageBlock>
+</apex:page>

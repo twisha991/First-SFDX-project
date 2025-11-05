@@ -1,0 +1,9 @@
+<aura:component implements="force:hasRecordId,flexipage:availableForAllPageTypes" access="global">
+    <aura:attribute name="message" type="String" />
+    <c:pubSubAuraLWC aura:id="pubsubBridge" />
+
+    <lightning:card title="Aura Subscriber">
+        <p class="slds-p-horizontal_medium">{!v.message}</p>
+    </lightning:card>
+
+    <aura:handler name="init" value="{!this}" action="{!

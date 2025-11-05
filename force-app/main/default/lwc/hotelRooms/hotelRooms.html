@@ -1,0 +1,60 @@
+<!-- <template>
+    <template for:each={hotelRooms} for:item="hotelRoom">
+        <c-hotel-room key={hotelRoom.name} hotel-room={hotelRoom} showhotel-rooms></c-hotel-room>
+    </template>
+    
+</template> -->
+
+
+
+
+
+<!-- <template>
+    <template if:true={showRoomInfo}>
+        <div>
+            named slot - room-info -->
+            <!-- <slot name="room-info"></slot> -->
+
+            <!-- unnamed slot -->
+             <!-- <slot></slot>
+        </div>
+    </template>
+</template> -->
+
+<!-- <template>
+    <template if:true={showRoomInfo}>
+        <div>
+            <lightning-tile label={hotelRoomInfo.roomName}>
+                <div class="slds-media__body">
+                    <p>Room Capacity: {hotelRoomInfo.roomCapacity}</p>
+                </div>
+            </lightning-tile>
+        </div>
+    </template>
+</template> -->
+
+
+
+
+<template>
+    <lightning-card title="Hotel Rooms"></lightning-card>
+    <lightning-layout>
+        <lightning-layout-item size="4">    
+            <ul>
+                <template for:each={hotelRoomsInfo} for:item="room">
+                    <li key={room}>
+                        <c-hotel-room
+                        hotel-room-info={room} show-room-info
+                        >
+                        </c-hotel-room>
+                    </li>
+                </template>
+            </ul>
+        </lightning-layout-item>
+        <lightning-layout-item size="8">    
+            <!-- <p class="pClass">Just to say Hi!</p> -->
+             <h1>Room Name: {selectedHotelRoom.roomName}</h1>
+             <h3>Room Capacity: {selectedHotelRoom.roomCapacity}</h3>
+        </lightning-layout-item>
+    </lightning-layout>
+</template>

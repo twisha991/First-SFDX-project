@@ -1,0 +1,18 @@
+<template>
+    <c-profile-card name="Twisha Kumar" title=" Software Engineer">
+        <!-- Unnamed slot content -->
+        <p>trainee</p>
+
+        <!-- Named slot content -->
+        <div slot="actions">
+            <lightning-button label="View Profile" onclick={handleView}></lightning-button>
+        </div>
+    </c-profile-card>
+
+    <c-profile-card name="Bharat Jhaveri" title="Manager">
+        <p>Experienced in leading  teams and delivering  solutions.</p>
+        <div slot="actions">
+            <lightning-button label="Message" onclick={handleMessage}></lightning-button>
+        </div>
+    </c-profile-card>
+</template>

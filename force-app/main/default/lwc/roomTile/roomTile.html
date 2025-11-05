@@ -1,0 +1,15 @@
+<template>
+    <lightning-card title={room.name} icon-name={iconName}>
+        <div class="slds-p-around_small slds-text-align_center">
+            <lightning-icon icon-name="utility:groups" size="small" class="slds-m-right_x-small"></lightning-icon>
+            <span>Capacity: {room.capacity}</span>
+        </div>
+        <div class="slds-p-around_small slds-text-align_center">
+            <lightning-button 
+                variant={buttonVariant} 
+                label={buttonLabel} 
+                onclick={handleAction}>
+            </lightning-button>
+        </div>
+    </lightning-card>
+</template>

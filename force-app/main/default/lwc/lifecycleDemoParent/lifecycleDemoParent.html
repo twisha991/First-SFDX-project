@@ -1,0 +1,27 @@
+<!-- <template>
+    <lightning-tile label="Lightning Component Lifecycle">
+        <p class="slds-truncate" title="Life Cycle">
+            Life cycle Demo Parent!
+        </p>
+    </lightning-tile>
+
+    <lightning-input type="checkbox" label="Show Child" 
+    onchange={handleChange}>
+    </lightning-input>
+
+    <c-lifecycle-demo-child if:true={show}></c-lifecycle-demo-child>
+</template> -->
+
+
+
+
+
+<template>
+    <lightning-card title="Lifecycle Demo Parent">
+        <lightning-input type="checkbox" label="Show Child Component" onchange={handleChange}></lightning-input>
+
+        <template if:true={show}>
+            <c-lifecycle-demo-child></c-lifecycle-demo-child>
+        </template>
+    </lightning-card>
+</template>

@@ -1,0 +1,14 @@
+<template>
+    
+    <lightning-card title="Call"></lightning-card>
+    
+    <lightning-input value={value} label="Radiobutton Value" onchange={handleChange}></lightning-input>
+    <lightning-button label="Select Radiobutton" onclick={handleClick}></lightning-button>
+
+     <div>I am a div in Parent Component!</div>
+     <p>{value}</p>
+     <br/><br/>
+
+     <c-public-method-child></c-public-method-child>
+     
+</template>

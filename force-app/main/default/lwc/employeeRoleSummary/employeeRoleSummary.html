@@ -1,0 +1,13 @@
+<template>
+    <lightning-card title="Employee Role Summary" icon-name="standard:groups">
+        <div class="slds-m-around_medium">
+            <template if:true={roleSummary}>
+                <ul class="slds-list_dotted">
+                    <template for:each={roleSummary} for:item="item">
+                        <li key={item.role}>{item.role}: {item.count}</li>
+                    </template>
+                </ul>
+            </template>
+        </div>
+    </lightning-card>
+</template>

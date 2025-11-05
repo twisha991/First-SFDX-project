@@ -1,0 +1,14 @@
+<template>
+    <lightning-input
+        label="Enter Message"
+        value={inputMessage}
+        onchange={handleInputChange}>
+    </lightning-input>
+
+    <lightning-button
+        label="Send Message to Child"
+        onclick={sendMessageToChild}>
+    </lightning-button>
+
+    <c-message-child></c-message-child>
+</template>

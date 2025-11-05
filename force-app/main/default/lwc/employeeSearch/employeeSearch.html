@@ -1,0 +1,14 @@
+<template>
+    <lightning-card title="Employee Search" icon-name="standard:search">
+        <div class="slds-m-around_medium">
+            <lightning-input label="Search by Name" value={searchTerm} onchange={handleSearch}></lightning-input>
+            <template if:true={filteredEmployees}>
+                <ul class="slds-list_dotted slds-m-top_medium">
+                    <template for:each={filteredEmployees} for:item="emp">
+                        <li key={emp.id}>{emp.name} - {emp.role}</li>
+                    </template>
+                </ul>
+            </template>
+        </div>
+    </lightning-card>
+</template>

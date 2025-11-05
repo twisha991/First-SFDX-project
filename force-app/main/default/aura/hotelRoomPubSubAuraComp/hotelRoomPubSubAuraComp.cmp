@@ -1,0 +1,18 @@
+<aura:component implements="flexipage:availableForAllPageTypes">
+    <!-- Attribute to hold selected hotel room info -->
+    <aura:attribute name="selectedHotelRoomInfo" type="Object" />
+
+    <!-- Wrapper LWC for pubsub, assumed to fire an event with room info -->
+    <c:pubSubAuraLWC aura:id="pubSubModule" onready="{!c.subscribeToEvent}" />
+
+    <lightning:card title="SelectedHotelRoom-Aura">
+        <div class="slds-p-around_medium">
+            <h3>
+                You have selected: <b>{!v.selectedHotelRoomInfo.roomName}</b>
+            </h3>
+            <h4>
+                Room Capacity: <b>{!v.selectedHotelRoomInfo.roomCapacity}</b>
+            </h4>
+        </div>
+    </lightning:card>
+</aura:component>

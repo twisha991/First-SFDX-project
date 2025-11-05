@@ -1,0 +1,11 @@
+
+<template>
+    <template if:true={isLoading}>
+        <lightning-spinner alternative-text="Loading" size="medium"></lightning-spinner>
+    </template>
+    <template if:false={isLoading}>
+        <div class="welcome-message">
+            <h1>Welcome to the Lightning Web Component!</h1>
+        </div>
+    </template>
+</template>

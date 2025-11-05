@@ -1,0 +1,27 @@
+/* .first-city {
+    color: green;
+    font-weight: bold;
+}
+
+.last-city {
+    color: red;
+    font-style: italic;
+}
+
+.normal-city {
+    color: black;
+} */
+
+
+.first-city{
+    color:red;
+    font-size: xx-large;
+}
+.last-city{
+    color:green;
+    font-size: xx-large;
+}
+.any-city{
+    color:gray;
+}
+ 

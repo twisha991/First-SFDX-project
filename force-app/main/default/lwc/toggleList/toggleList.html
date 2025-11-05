@@ -1,0 +1,23 @@
+<template>
+    
+    <lightning-card title="City List Toggle">
+        <div class="slds-p-around_medium">
+            <lightning-input 
+                type="checkbox" 
+                label="Show Cities" 
+                onchange={handleCheckboxChange}>
+            </lightning-input>
+
+            <template if:true={showCities}>
+                <ul class="slds-m-top_medium">
+                    <li>Pune</li>
+                    <li>Mumbai</li>
+                    <li>Bangalore</li>
+                    <li>Hyderabad</li>
+                </ul>
+            </template>
+        </div>
+    </lightning-card>
+
+    
+</template>

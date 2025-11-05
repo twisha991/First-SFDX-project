@@ -1,0 +1,26 @@
+<!-- <template>
+    <template if:true={showhotelRooms}>
+        <div class="slds-p-around_medium">
+            <p>{hotelRoom.name}</p>
+            <p>{hotelRoom.price}</p>
+        </div>
+    </template>
+    
+</template> -->
+
+
+
+
+
+<template>
+    <template if:true={showRoomInfo}>
+        <div>
+            <lightning-tile label={hotelRoomInfo.roomName}
+            onclick={selectTileHandler}>
+                <div class="slds-media__body">
+                    <p>Room Capacity: {hotelRoomInfo.roomCapacity}</p>
+                </div>
+            </lightning-tile>
+        </div>
+    </template>
+</template>

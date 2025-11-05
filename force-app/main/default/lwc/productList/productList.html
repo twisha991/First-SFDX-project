@@ -1,0 +1,13 @@
+<template>
+    <lightning-card title="Product List">
+        <template for:each={products} for:item="product">
+            <c-product-card
+                key={product.id}
+                product-info={product}
+                onpricechange={handlePriceChange}>
+            </c-product-card>
+        </template>
+    </lightning-card>
+</template>
+
+

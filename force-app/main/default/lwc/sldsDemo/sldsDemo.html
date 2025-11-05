@@ -1,0 +1,169 @@
+
+<template>
+  <lightning-card title="Dashboard Overview" icon-name="standard:dashboard">
+    <div class="slds-p-around_medium slds-grid slds-wrap">
+
+      <!-- 1. lightning-input -->
+       <div class="slds-col slds-size_1-of-2 slds-p-around_small">
+        <lightning-input label="Search" placeholder="Type to search..." class="slds-m-bottom_small"></lightning-input>
+      </div> 
+
+      <!-- 2. lightning-button -->
+       <div class="slds-col slds-size_1-of-2 slds-p-around_small">
+        <lightning-button label="Refresh" variant="brand" class="slds-m-bottom_small"></lightning-button>
+      </div> 
+
+       <div class="slds-col slds-size_1-of-2 slds-p-around_small">
+        <lightning-button label="Refresh" variant="brand" class="slds-m-bottom_small"></lightning-button><br/>
+        <lightning-button label="Cancel" variant="neutral" class="slds-m-around_small"></lightning-button><br/>
+        <lightning-button label="Delete" variant="destructive" class="slds-m-around_small"></lightning-button><br/>
+        <lightning-button label="Preview" variant="outline-brand" class="slds-m-around_small"></lightning-button><br/>
+        <lightning-button-icon icon-name="utility:refresh" alternative-text="Refresh" onclick={handleRefresh} class="slds-m-around_small"></lightning-button-icon><br/>
+        <lightning-button icon-name="utility:download" label="Download" variant="brand" class="slds-m-around_small"></lightning-button><br/>
+        <lightning-button label="Submit" disabled class="slds-m-around_small"></lightning-button><br/>
+      </div> 
+
+      <!-- 3. lightning-progress-bar -->
+       <div class="slds-col slds-size_1-of-1 slds-p-around_small">
+        <label class="slds-text-title_caps">Progress</label>
+        <lightning-progress-bar value="65" size="medium" class="slds-m-top_x-small"></lightning-progress-bar>
+      </div> 
+
+       <div class="slds-col slds-size_1-of-1 slds-p-around_small">
+        <label class="slds-text-title_caps">Progress</label>
+        <lightning-progress-bar value="40"></lightning-progress-bar><br/>
+        <lightning-progress-bar value="25" size="x-small"></lightning-progress-bar><br/>
+        <lightning-progress-bar value="50" size="medium"></lightning-progress-bar><br/>
+        <lightning-progress-bar value="75" size="large"></lightning-progress-bar><br/>
+        <lightning-progress-bar value="65" size="medium" class="slds-m-top_x-small"></lightning-progress-bar>
+      </div><br/><br/>
+      <div class="slds-p-around_medium slds-box slds-theme_shade">
+        <label class="slds-text-title_caps">Upload Progress</label>
+        <lightning-progress-bar value="85" size="large" class="slds-m-top_small"></lightning-progress-bar>
+      </div><br/><br/>
+      <div>
+         <lightning-progress-bar value={progressValue}></lightning-progress-bar><br/>
+          <lightning-button label="Increase" onclick={increaseProgress}></lightning-button>
+      </div><br/><br/>  
+
+      <!-- 4. lightning-pill -->
+       <div class="slds-col slds-size_1-of-1 slds-p-around_small">
+        <lightning-pill label="Active" onremove={handleRemove}></lightning-pill>
+      </div> 
+
+       <div class="slds-col slds-size_1-of-1 slds-p-around_small">
+        <lightning-pill label="Active" onremove={handleRemove}></lightning-pill><br/>
+       
+        <lightning-pill label="John Doe" onremove={handleRemove}>
+          <lightning-avatar slot="start" initials="JD"></lightning-avatar>
+        </lightning-pill><br/>
+
+        <lightning-pill label="PDF File" onremove={handleRemove}>
+          <lightning-icon slot="start" icon-name="doctype:pdf" alternative-text="PDF"></lightning-icon>
+        </lightning-pill><br/>
+      </div><br/><br/>
+      <div class="slds-pill_container">
+        <lightning-pill label="Design" onremove={handleRemove}></lightning-pill><br/>
+        <lightning-pill label="Development" onremove={handleRemove}></lightning-pill><br/>
+        <lightning-pill label="Testing" onremove={handleRemove}></lightning-pill><br/>
+      </div><br/><br/>   
+
+      <!-- 5. lightning-badge -->
+       <div class="slds-col slds-size_1-of-1 slds-p-around_small">
+        <lightning-badge label="New"></lightning-badge>
+      </div> 
+
+     <div class="slds-col slds-size_1-of-1 slds-p-around_small">
+        <lightning-badge label="New"></lightning-badge><br/>
+        <lightning-badge label="Urgent" class="slds-theme_success"></lightning-badge><br/>
+        <lightning-badge label="In Progress"></lightning-badge><br/>
+        <lightning-badge label="Completed"></lightning-badge><br/>
+        <span class="slds-badge slds-theme_success">Approved</span>
+        <span class="slds-badge slds-theme_error">Rejected</span>
+        <span class="slds-badge slds-theme_warning">Pending</span>
+      </div><br/><br/>
+      <lightning-card title="Project Alpha">
+        <div class="slds-p-horizontal_small">
+          <lightning-badge label="Beta Release"></lightning-badge>
+        </div>
+      </lightning-card><br/><br/>
+
+      <div class="slds-grid slds-wrap">
+        <div class="slds-col slds-size_1-of-3 slds-p-around_small">
+          <lightning-badge label="Design"></lightning-badge>
+        </div>
+        <div class="slds-col slds-size_1-of-3 slds-p-around_small">
+          <lightning-badge label="Development"></lightning-badge>
+        </div>
+        <div class="slds-col slds-size_1-of-3 slds-p-around_small">
+          <lightning-badge label="Testing"></lightning-badge>
+        </div>
+      </div> 
+
+      <!-- 6. lightning-datatable -->
+       <div class="slds-col slds-size_1-of-1 slds-p-around_small">
+        <lightning-datatable
+          key-field="id"
+          data={data}
+          columns={columns}
+          hide-checkbox-column
+        ></lightning-datatable>
+      </div> 
+
+       Grid System  Two Equal columns
+         Each column takes half the width (1-of-2). ðŸ”¹ slds-box adds a border and padding for visibility. 
+       <div class="slds-grid slds-wrap">
+          <div class="slds-col slds-size_1-of-2 slds-p-around_small">
+            <div class="slds-box">Left Column</div>
+          </div>
+          <div class="slds-col slds-size_1-of-2 slds-p-around_small">
+            <div class="slds-box">Right Column</div>
+          </div>
+        </div>
+    
+THree Unequal columns 
+  This layout splits the row into 25% / 50% / 25% columns. 
+        <div class="slds-grid slds-wrap">
+          <div class="slds-col slds-size_1-of-4 slds-p-around_small">
+            <div class="slds-box">25%</div>
+          </div>
+          <div class="slds-col slds-size_1-of-2 slds-p-around_small">
+            <div class="slds-box">50%</div>
+          </div>
+          <div class="slds-col slds-size_1-of-4 slds-p-around_small">
+            <div class="slds-box">25%</div>
+          </div>
+        </div>
+
+         Responsive Wrapping Grid 
+          On smaller screens, columns will wrap to the next line. 
+         <div class="slds-grid slds-wrap">
+            <div class="slds-col slds-size_1-of-3 slds-p-around_small">
+              <div class="slds-box">Column 1</div>
+            </div>
+            <div class="slds-col slds-size_1-of-3 slds-p-around_small">
+              <div class="slds-box">Column 2</div>
+            </div>
+            <div class="slds-col slds-size_1-of-3 slds-p-around_small">
+              <div class="slds-box">Column 3</div>
+            </div>
+          </div>
+
+
+    </div>
+  </lightning-card>
+</template>
+
+
+<!-- <template>
+     <lightning-card title="SLDS Form Demo" icon-name="standard:contact">
+        <div class="slds-p-around_medium">
+        <lightning-input label="Full Name" value={name} class="slds-m-bottom_small" 
+        onchange={handleChange} data-id="name" required></lightning-input>
+        <lightning-input label="Email" type="email" value={email} class="slds-m-bottom_small" 
+        onchange={handleChange} data-id="email" required></lightning-input>
+        <lightning-textarea label="Message" value={message} class="slds-m-bottom_medium" onchange={handleChange} data-id="message" required></lightning-textarea>
+        <lightning-button label="Submit" variant="brand" onclick={handleClick}></lightning-button>
+        </div>
+    </lightning-card>
+</template> -->

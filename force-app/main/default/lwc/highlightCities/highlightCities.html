@@ -1,0 +1,26 @@
+<!-- <template>
+    <lightning-card title="City List with Highlights">
+        <div class="slds-p-around_medium">
+            <ul>
+                <template iterator:city={cities}>
+                    <li key={city.value} class={city.value.className}>
+                        {city.index }. {city.value.Name}
+                    </li>
+                </template>
+            </ul>
+        </div>
+    </lightning-card>
+</template> -->
+
+
+
+<template>
+  <template iterator:it={cityList}>
+        <p key={it.value} class={it.value.className}>
+            {it.index}. {it.value.name}
+        </p>
+    </template>
+ 
+    <h1>Country {country}!</h1>
+    <h1>Country Name: {countryName}!</h1>
+</template>

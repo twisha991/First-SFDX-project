@@ -1,0 +1,14 @@
+<template>
+    <lightning-card title="Employee Cards" icon-name="standard:contact">
+        <div class="slds-m-around_medium">
+            <template if:true={employees}>
+                <template for:each={employees} for:item="emp">
+                    <div key={emp.id} class="slds-box slds-box_xx-small slds-m-bottom_small">
+                        <p><strong>{emp.name}</strong></p>
+                        <p>{emp.role}</p>
+                    </div>
+                </template>
+            </template>
+        </div>
+    </lightning-card>
+</template>

@@ -1,0 +1,14 @@
+<template>
+    <!-- View -->
+       <lightning-card  title="Hello World">
+            <div class="slds-m-around_medium">
+                <p>Hello {greeting}</p>
+                <lightning-input type="text" label="Enter your name" 
+                value={greeting} onchange={handleChange}></lightning-input>
+                <img src={salesForceImage} alt="Sachin Tendulkar"></img>
+            </div>
+
+            <lightning-button label="Click Me" onclick={eventListenerInParent}></lightning-button>
+            <h1>{labelText}!</h1>
+       </lightning-card>
+</template>

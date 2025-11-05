@@ -1,0 +1,16 @@
+<template>
+    <lightning-card title={cardTitle}></lightning-card>
+
+    <lightning-input type="number" label="Number 1"
+    onchange={changeHandler1}></lightning-input>
+    <lightning-input type="number" label="Number 2"
+    onchange={changeHandler2}></lightning-input>
+
+    <lightning-button label="Multiply" onclick={multiply}></lightning-button>
+    <lightning-button   label="Square" onclick={square}></lightning-button>
+    
+    <div>
+        <p>Multiplication is {multResult}!</p>
+        <p>Square is {squareResult}!</p>
+    </div>
+</template>

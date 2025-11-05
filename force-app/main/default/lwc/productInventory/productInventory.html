@@ -1,0 +1,23 @@
+<template>
+    <lightning-card title="Product Inventory" >
+        <div class="slds-p-horizontal_medium slds-p-vertical_small">
+            <lightning-input
+                type="text"
+                label="Search Products"
+                value={searchKey}
+                onchange={handleSearch}
+                placeholder="Enter product name"
+            ></lightning-input>
+        </div>
+
+        <lightning-datatable
+            key-field="id"
+            data={filteredProducts}
+           
+            sorted-by={sortedBy}
+            sorted-direction={sortedDirection}
+            onsort={handleSort}
+          
+        ></lightning-datatable>
+    </lightning-card>
+</template>

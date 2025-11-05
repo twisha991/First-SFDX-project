@@ -1,0 +1,7 @@
+lightning-card {
+    min-height: 160px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.slds-text-align_center {
+    text-align: center;
+}
